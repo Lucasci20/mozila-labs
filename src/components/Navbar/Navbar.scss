@@ -1,0 +1,142 @@
+#navbar {
+    background-image: linear-gradient(black, transparent);
+    
+    section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    
+        height: 8rem;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+
+       .menu-title {
+        
+        h3 {
+            width: 20rem;
+            font-family: sans-serif;
+            font-size: 3rem;
+            font-weight: 200;
+            color: white;
+
+            strong {
+                 font-weight: 600;
+            }
+        }
+
+       }
+    
+       .menu-icon {
+           display: none;
+           font-size: 2.5rem;
+           color: white;
+       }
+        
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction:row;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        gap: 2rem;
+        font-size: 2rem;
+
+        .nav-links {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: white;
+            transition: .2s ease-in;
+            position: relative;
+        }
+
+        .nav-links:hover::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: white;
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+        }
+
+        
+
+    }
+
+    @media(max-width:885px) {
+        section {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+
+    @media(max-width: 770px) {
+        position: relative;
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 30rem;
+            position: absolute;
+            top: 8rem;
+            left: -100%;
+            opacity: 1;
+            transition: .2s;
+
+        }
+        .nav-menu {
+
+            .nav-links {
+                padding: 1rem;
+                display: table;
+            }
+        }
+
+
+        .nav-menu.active {
+            background-color: black;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: 1;
+
+        }
+
+        header {
+            .menu-title {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-left: 2rem;
+                transform: translateY(50%);
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                
+                transform:translate(-100%,50%);
+                
+                cursor: pointer;
+            }
+        }
+    }
+}
